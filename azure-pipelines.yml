@@ -8,12 +8,10 @@ trigger: none
 pool: Self-Agent
 
 steps: 
-- task: TerraformTask@5
+- task: PowerShell@2
   inputs:
-    provider: 'azurerm'
-    command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/GiRepo1'
-    backendAzureRmResourceGroupName: 'JK-RG'
-    backendAzureRmStorageAccountName: 'stgyamlpipe'
-    backendAzureRmContainerName: 'yamlconteiner'
-    backendAzureRmKey: 'MY'
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      Write-Host "Hello World"
